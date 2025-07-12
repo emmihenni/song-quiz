@@ -1,6 +1,34 @@
 import React from "react";
 
-function normalize(str) {
+interface SongMeta {
+  id: string;
+  uri: string;
+  name: string;
+  artists: string | { name: string }[];
+  releaseYear: string;
+  albumCover?: string;
+  [key: string]: any;
+}
+
+interface TeamGuess {
+  artist: string;
+  song: string;
+}
+
+interface Guesses {
+  team1: TeamGuess;
+  team2: TeamGuess;
+}
+
+interface RoundResultProps {
+  songMeta: SongMeta | null;
+  guesses: Guesses | null;
+  onNextRound: () => void;
+  punkte: number[];
+  setPunkte: (punkte: number[]) => void;
+}
+
+function normalize(str: string) {
   return (str || "")
     .toLowerCase()
     .normalize("NFD")
@@ -9,13 +37,13 @@ function normalize(str) {
     .trim();
 }
 
-export default function RoundResult({ songMeta, guesses, onNextRound, punkte, setPunkte }) {
+export default function RoundResult({ songMeta, guesses, onNextRound, punkte, setPunkte }: RoundResultProps) {
   if (!songMeta || !guesses) return null;
 
   // Vergleich
   const results = [1, 2].map(team => {
-    const guess = guesses[`team${team}`];
-    const artistCorrect = guess.artist && (normalize(songMeta.artists).includes(normalize(guess.artist)) || normalize(guess.artist).includes(normalize(songMeta.artists)));
+    const guess = guesses[`team${team}` as keyof Guesses];
+    const artistCorrect = guess.artist && (normalize(typeof songMeta.artists === "string" ? songMeta.artists : songMeta.artists.map(a => a.name).join(", ")).includes(normalize(guess.artist)) || normalize(guess.artist).includes(normalize(typeof songMeta.artists === "string" ? songMeta.artists : songMeta.artists.map(a => a.name).join(", "))));
     const songCorrect = guess.song && (normalize(songMeta.name).includes(normalize(guess.song)) || normalize(guess.song).includes(normalize(songMeta.name)));
     const points = (artistCorrect ? 1 : 0) + (songCorrect ? 1 : 0);
     return { artistCorrect, songCorrect, points, guess };
@@ -39,7 +67,7 @@ export default function RoundResult({ songMeta, guesses, onNextRound, punkte, se
         <div>
           <b>Richtige Lösung:</b>
           <div><img src={songMeta.albumCover} alt="Cover" style={{ width: 80, borderRadius: 6, margin: "8px 0" }} /></div>
-          <div><b>{songMeta.artists}</b> – <b>{songMeta.name}</b></div>
+          <div><b>{typeof songMeta.artists === "string" ? songMeta.artists : songMeta.artists.map(a => a.name).join(", ")}</b> – <b>{songMeta.name}</b></div>
         </div>
         {[1, 2].map((team, i) => (
           <div key={team} style={{ minWidth: 180 }}>

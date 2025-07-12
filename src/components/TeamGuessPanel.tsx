@@ -1,19 +1,33 @@
 import React, { useState } from "react";
 
-export default function TeamGuessPanel({ onSubmit }) {
-  const [guesses, setGuesses] = useState({
+interface TeamGuess {
+  artist: string;
+  song: string;
+}
+
+interface Guesses {
+  team1: TeamGuess;
+  team2: TeamGuess;
+}
+
+interface TeamGuessPanelProps {
+  onSubmit: (guesses: Guesses) => void;
+}
+
+export default function TeamGuessPanel({ onSubmit }: TeamGuessPanelProps) {
+  const [guesses, setGuesses] = useState<Guesses>({
     team1: { artist: "", song: "" },
     team2: { artist: "", song: "" }
   });
 
-  const handleChange = (team, field, value) => {
+  const handleChange = (team: keyof Guesses, field: keyof TeamGuess, value: string) => {
     setGuesses(g => ({
       ...g,
       [team]: { ...g[team], [field]: value }
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(guesses);
   };
@@ -25,12 +39,12 @@ export default function TeamGuessPanel({ onSubmit }) {
           <h3>Team {team}</h3>
           <div style={{ marginBottom: 10 }}>
             <label>Künstler:<br />
-              <input type="text" value={guesses[`team${team}`].artist} onChange={e => handleChange(`team${team}`, "artist", e.target.value)} required />
+              <input type="text" value={guesses[`team${team}` as keyof Guesses].artist} onChange={e => handleChange(`team${team}` as keyof Guesses, "artist", e.target.value)} required />
             </label>
           </div>
           <div style={{ marginBottom: 10 }}>
             <label>Songtitel:<br />
-              <input type="text" value={guesses[`team${team}`].song} onChange={e => handleChange(`team${team}`, "song", e.target.value)} required />
+              <input type="text" value={guesses[`team${team}` as keyof Guesses].song} onChange={e => handleChange(`team${team}` as keyof Guesses, "song", e.target.value)} required />
             </label>
           </div>
         </div>

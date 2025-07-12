@@ -1,7 +1,28 @@
 import React, { useState } from "react";
 
-export default function YearSortPanel({ songHistory, currentSong, onSubmit }) {
-  const [answers, setAnswers] = useState({ team1: 0, team2: 0 });
+interface SongMeta {
+  id: string;
+  uri: string;
+  name: string;
+  artists: string | { name: string }[];
+  releaseYear: string;
+  albumCover?: string;
+  [key: string]: any;
+}
+
+interface SortAnswers {
+  team1: number;
+  team2: number;
+}
+
+interface YearSortPanelProps {
+  songHistory: SongMeta[];
+  currentSong: SongMeta;
+  onSubmit: (answers: SortAnswers, sortedHistory: SongMeta[]) => void;
+}
+
+export default function YearSortPanel({ songHistory, currentSong, onSubmit }: YearSortPanelProps) {
+  const [answers, setAnswers] = useState<SortAnswers>({ team1: 0, team2: 0 });
 
   if (!songHistory.length || !currentSong) return null;
 
@@ -9,7 +30,7 @@ export default function YearSortPanel({ songHistory, currentSong, onSubmit }) {
   const sorted = [...songHistory].sort((a, b) => parseInt(a.releaseYear) - parseInt(b.releaseYear));
 
   // Erzeuge die Einfüge-Positionen (zwischen jedem Song und an den Enden)
-  const positions = [];
+  const positions: { idx: number; label: string }[] = [];
   for (let i = 0; i <= sorted.length; i++) {
     let label = "";
     if (i === 0) {
@@ -22,11 +43,11 @@ export default function YearSortPanel({ songHistory, currentSong, onSubmit }) {
     positions.push({ idx: i, label });
   }
 
-  const handleChange = (team, value) => {
+  const handleChange = (team: keyof SortAnswers, value: string) => {
     setAnswers(a => ({ ...a, [team]: parseInt(value) }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(answers, sorted);
   };
@@ -38,7 +59,7 @@ export default function YearSortPanel({ songHistory, currentSong, onSubmit }) {
           <h3>Team {team}</h3>
           <div style={{ marginBottom: 10 }}>
             <div>Wo würdet ihr <b>{currentSong.name}</b> in die bisherige Reihenfolge einsortieren?</div>
-            <select value={answers[`team${team}`]} onChange={e => handleChange(`team${team}`, e.target.value)} required style={{ marginTop: 10, width: "100%" }}>
+            <select value={answers[`team${team}` as keyof SortAnswers]} onChange={e => handleChange(`team${team}` as keyof SortAnswers, e.target.value)} required style={{ marginTop: 10, width: "100%" }}>
               {positions.map(pos => (
                 <option key={pos.idx} value={pos.idx}>{pos.label}</option>
               ))}

@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function PunkteAnzeige({ punkte }) {
+interface PunkteAnzeigeProps {
+  punkte: number[];
+}
+
+export default function PunkteAnzeige({ punkte }: PunkteAnzeigeProps) {
   return (
     <div style={{ display: "flex", gap: "2rem", margin: "1rem 0" }}>
       <div>Team 1: <b>{punkte[0]}</b> Punkte</div>

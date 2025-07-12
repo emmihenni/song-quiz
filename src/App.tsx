@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import "./App.css";
 import Ueberschrift from "./components/Ueberschrift";
@@ -10,20 +11,38 @@ import TeamGuessPanel from "./components/TeamGuessPanel";
 import RoundResult from "./components/RoundResult";
 import YearSortPanel from "./components/YearSortPanel";
 
-function App() {
-  const [accessToken, setAccessToken] = useState(null);
-  const [deviceId, setDeviceId] = useState("");
-  const [songMeta, setSongMeta] = useState(null);
-  const [guesses, setGuesses] = useState(null);
-  const [punkte, setPunkte] = useState([0, 0]);
-  const [showResult, setShowResult] = useState(false);
-  const [trackPool, setTrackPool] = useState([]);
-  const [songHistory, setSongHistory] = useState([]);
-  const [showSortPanel, setShowSortPanel] = useState(false);
-  const [sortAnswers, setSortAnswers] = useState(null);
-  const [sortFeedback, setSortFeedback] = useState("");
+// Typdefinitionen für Song, Guess, usw.
+interface SongMeta {
+  id: string;
+  uri: string;
+  name: string;
+  artists: { name: string }[];
+  releaseYear: string;
+  [key: string]: any; // für weitere Felder
+}
 
-  const handleTracksLoaded = (tracks) => {
+interface Guess {
+  [team: string]: number | string;
+}
+
+interface SortAnswers {
+  [team: string]: number;
+}
+
+function App() {
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [deviceId, setDeviceId] = useState<string>("");
+  const [songMeta, setSongMeta] = useState<SongMeta | null>(null);
+  const [guesses, setGuesses] = useState<Guess | null>(null);
+  const [punkte, setPunkte] = useState<number[]>([0, 0]);
+  const [showResult, setShowResult] = useState<boolean>(false);
+  const [trackPool, setTrackPool] = useState<SongMeta[]>([]);
+  const [songHistory, setSongHistory] = useState<SongMeta[]>([]);
+  const [showSortPanel, setShowSortPanel] = useState<boolean>(false);
+  const [sortAnswers, setSortAnswers] = useState<SortAnswers | null>(null);
+  const [sortFeedback, setSortFeedback] = useState<string>("");
+
+  const handleTracksLoaded = (tracks: SongMeta[]) => {
     setTrackPool(tracks);
     setSongMeta(null);
     setGuesses(null);
@@ -34,7 +53,7 @@ function App() {
     setSortFeedback("");
   };
 
-  const handleSongLoaded = (meta) => {
+  const handleSongLoaded = (meta: SongMeta) => {
     setSongMeta(meta);
     setGuesses(null);
     setShowResult(false);
@@ -43,7 +62,7 @@ function App() {
     setSortFeedback("");
   };
 
-  const handleGuesses = (g) => {
+  const handleGuesses = (g: Guess) => {
     setGuesses(g);
     if (songHistory.length > 0) {
       setShowSortPanel(true);
@@ -52,9 +71,9 @@ function App() {
     }
   };
 
-  const handleSortSubmit = (answers, sortedHistory) => {
+  const handleSortSubmit = (answers: SortAnswers, sortedHistory: SongMeta[]) => {
     setSortAnswers(answers);
-    const currentYear = parseInt(songMeta.releaseYear);
+    const currentYear = parseInt(songMeta!.releaseYear);
     let correctIdx = 0;
     while (
       correctIdx < sortedHistory.length &&
@@ -63,7 +82,7 @@ function App() {
       correctIdx++;
     }
     let punkteNeu = [...punkte];
-    let feedback = [];
+    let feedback: string[] = [];
     [1, 2].forEach((team, i) => {
       if (answers[`team${team}`] === correctIdx) {
         punkteNeu[i] += 1;
@@ -77,7 +96,7 @@ function App() {
   };
 
   const handleNextRound = () => {
-    setSongHistory(h => [...h, songMeta]);
+    setSongHistory(h => [...h, songMeta!]);
     setSongMeta(null);
     setGuesses(null);
     setShowResult(false);
@@ -91,14 +110,16 @@ function App() {
     const unused = trackPool.filter(t => !songHistory.some(s => s.id === t.id));
     if (!unused.length) return alert("Alle Songs wurden gespielt!");
     const randomTrack = unused[Math.floor(Math.random() * unused.length)];
-    await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ uris: [randomTrack.uri] })
-    });
+    await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ uris: [randomTrack.uri] })
+      }
+    );
     setSongMeta(randomTrack);
     setGuesses(null);
     setShowResult(false);
