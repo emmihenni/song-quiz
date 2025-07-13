@@ -33,9 +33,30 @@ export default function TeamGuessPanel({ onSubmit }: TeamGuessPanelProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", gap: 32, justifyContent: "center", margin: "2rem 0" }}>
+    <form
+      onSubmit={handleSubmit}
+      className="team-guess-form"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+        justifyContent: "center",
+        margin: "2rem 0"
+      }}
+    >
       {[1, 2].map(team => (
-        <div key={team} style={{ background: "#fff", borderRadius: 10, boxShadow: "0 2px 10px #eee", padding: 20, minWidth: 220 }}>
+        <div
+          key={team}
+          style={{
+            background: "#fff",
+            borderRadius: 10,
+            boxShadow: "0 2px 10px #eee",
+            padding: 20,
+            minWidth: 0,
+            width: "100%",
+            boxSizing: "border-box"
+          }}
+        >
           <h3>Team {team}</h3>
           <div style={{ marginBottom: 10 }}>
             <label>Künstler:<br />
@@ -49,8 +70,8 @@ export default function TeamGuessPanel({ onSubmit }: TeamGuessPanelProps) {
           </div>
         </div>
       ))}
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <button type="submit" style={{ height: 50, fontSize: 18 }}>Tipps abgeben</button>
+      <div style={{ display: "flex", alignItems: "center", marginTop: 12 }}>
+        <button type="submit" style={{ width: "100%", height: 50, fontSize: 18 }}>Tipps abgeben</button>
       </div>
     </form>
   );

@@ -755,9 +755,11 @@ function TeamGuessPanel({ onSubmit }) {
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
         onSubmit: handleSubmit,
+        className: "team-guess-form",
         style: {
             display: "flex",
-            gap: 32,
+            flexDirection: "column",
+            gap: 16,
             justifyContent: "center",
             margin: "2rem 0"
         },
@@ -771,7 +773,9 @@ function TeamGuessPanel({ onSubmit }) {
                         borderRadius: 10,
                         boxShadow: "0 2px 10px #eee",
                         padding: 20,
-                        minWidth: 220
+                        minWidth: 0,
+                        width: "100%",
+                        boxSizing: "border-box"
                     },
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -781,7 +785,7 @@ function TeamGuessPanel({ onSubmit }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                            lineNumber: 39,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -793,7 +797,7 @@ function TeamGuessPanel({ onSubmit }) {
                                     "Künstler:",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 62,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -803,18 +807,18 @@ function TeamGuessPanel({ onSubmit }) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 63,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                lineNumber: 41,
+                                lineNumber: 62,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                            lineNumber: 40,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -826,7 +830,7 @@ function TeamGuessPanel({ onSubmit }) {
                                     "Songtitel:",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 67,
                                         columnNumber: 30
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -836,46 +840,48 @@ function TeamGuessPanel({ onSubmit }) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 68,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                                lineNumber: 46,
+                                lineNumber: 67,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                            lineNumber: 45,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this)
                     ]
                 }, team, true, {
                     fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                    lineNumber: 38,
+                    lineNumber: 48,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 style: {
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "center",
+                    marginTop: 12
                 },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     type: "submit",
                     style: {
+                        width: "100%",
                         height: 50,
                         fontSize: 18
                     },
                     children: "Tipps abgeben"
                 }, void 0, false, {
                     fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                    lineNumber: 53,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/TeamGuessPanel.tsx",
-                lineNumber: 52,
+                lineNumber: 73,
                 columnNumber: 7
             }, this)
         ]
