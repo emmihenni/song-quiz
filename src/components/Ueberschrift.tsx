@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Ueberschrift() {
+interface UeberschriftProps {
+  color?: string;
+}
+
+export default function Ueberschrift({ color = "#fff" }: UeberschriftProps) {
   return (
     <header>
-      <h1>Song Quiz</h1>
+      <h1 style={{ color }}>{"Song Quiz"}</h1>
     </header>
   );
 } 

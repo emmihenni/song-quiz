@@ -22,19 +22,26 @@ interface SongMeta {
   [key: string]: any; // für weitere Felder
 }
 
-interface Guess {
-  [team: string]: number | string;
+interface TeamGuess {
+  artist: string;
+  song: string;
+}
+
+interface Guesses {
+  team1: TeamGuess;
+  team2: TeamGuess;
 }
 
 interface SortAnswers {
-  [team: string]: number;
+  team1: number;
+  team2: number;
 }
 
 function Home() {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [deviceId, setDeviceId] = useState<string>("");
   const [songMeta, setSongMeta] = useState<SongMeta | null>(null);
-  const [guesses, setGuesses] = useState<Guess | null>(null);
+  const [guesses, setGuesses] = useState<Guesses | null>(null);
   const [punkte, setPunkte] = useState<number[]>([0, 0]);
   const [showResult, setShowResult] = useState<boolean>(false);
   const [trackPool, setTrackPool] = useState<SongMeta[]>([]);
@@ -63,7 +70,7 @@ function Home() {
     setSortFeedback("");
   };
 
-  const handleGuesses = (g: Guess) => {
+  const handleGuesses = (g: Guesses) => {
     setGuesses(g);
     if (songHistory.length > 0) {
       setShowSortPanel(true);
@@ -88,7 +95,7 @@ function Home() {
     let punkteNeu = [...punkte];
     let feedback: string[] = [];
     [1, 2].forEach((team, i) => {
-      if (answers[`team${team}`] === correctIdx) {
+      if (answers[`team${team}` as keyof SortAnswers] === correctIdx) {
         punkteNeu[i] += 1;
         feedback.push(
           `Team ${team} erhält 1 Punkt für die richtige Einsortierung!`
@@ -136,6 +143,44 @@ function Home() {
     setSortAnswers(null);
     setSortFeedback("");
   };
+
+  // Shortcut für Musik stoppen/abspielen (Option + Leertaste)
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space" && e.altKey) {
+        if (accessToken && deviceId) {
+          // Status abfragen
+          fetch("https://api.spotify.com/v1/me/player", {
+            headers: { Authorization: `Bearer ${accessToken}` }
+          })
+            .then(res => res.json())
+            .then(data => {
+              if (data.is_playing) {
+                // Pausieren
+                fetch(`https://api.spotify.com/v1/me/player/pause?device_id=${deviceId}`, {
+                  method: "PUT",
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    "Content-Type": "application/json"
+                  }
+                });
+              } else {
+                // Fortsetzen
+                fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
+                  method: "PUT",
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    "Content-Type": "application/json"
+                  }
+                });
+              }
+            });
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [accessToken, deviceId]);
 
   return (
     <div

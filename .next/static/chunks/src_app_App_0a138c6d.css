@@ -1,48 +1,96 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
 /* [project]/src/app/App.css [app-client] (css) */
-#root {
-  text-align: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+  --primary-bg: #102d18;
+  --primary-dark: #0b1e12;
+  --accent: #1db954;
+  --card-bg: #183c25;
+  --text: #f3f3f3;
+  --text-muted: #b6c2b7;
+  --border: #254d34;
 }
 
-.logo {
-  will-change: filter;
-  height: 6em;
-  padding: 1.5em;
-  transition: filter .3s;
+body {
+  background: var(--primary-bg);
+  color: #111;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.App {
+  background: var(--primary-dark);
+  color: #111;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 4px 32px #0002;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1, h2, h3, h4, h5, h6, p, div, span, label, input, select, button {
+  color: #111;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background .2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: 20s linear infinite logo-spin;
-  }
+button:hover {
+  background: #159c43;
 }
 
-.card {
-  padding: 2em;
+h2, h3 {
+  color: var(--accent);
+  margin-top: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
 }
 
-.read-the-docs {
-  color: #888;
+[class*="SongHistory"] div[style*="border: 1px"] {
+  color: var(--text);
+  box-shadow: 0 2px 8px #0003;
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+[class*="SongHistory"] img {
+  box-shadow: 0 2px 8px #0005;
+}
+
+input, select {
+  background: var(--primary-dark);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--accent);
+}
+
+[class*="Panel"], [class*="Result"] {
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  padding: 20px;
+  box-shadow: 0 2px 12px #0002;
+  background: var(--card-bg) !important;
+}
+
+[class*="DeviceSelector"] div[style*="color: orange"] {
+  background: #1db95422;
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 

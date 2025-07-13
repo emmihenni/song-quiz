@@ -13,6 +13,7 @@ const SCOPES = [
 export default function SpotifyLogin({ onToken }) {
   const REDIRECT_URI =
     typeof window !== "undefined" ? window.location.origin : "";
+  console.log(REDIRECT_URI);
 
   const handleLogin = () => {
     const authUrl =
@@ -22,7 +23,7 @@ export default function SpotifyLogin({ onToken }) {
         response_type: "token",
         redirect_uri: REDIRECT_URI,
         scope: SCOPES.join(" "),
-        show_dialog: true,
+        show_dialog: "true",
       }).toString();
     window.location.href = authUrl;
   };

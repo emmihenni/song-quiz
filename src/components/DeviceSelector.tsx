@@ -32,6 +32,11 @@ export default function DeviceSelector({ accessToken, onDeviceSelected }) {
       </button>
       {loading && <span> Lädt...</span>}
       {error && <div style={{ color: "red" }}>{error}</div>}
+      {devices.length > 0 && !devices.some(d => d.type === "Computer" && d.name.toLowerCase().includes("web player")) && (
+        <div style={{ color: "orange", margin: "8px 0" }}>
+          Tipp: Öffne <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer">Spotify Webplayer</a> und spiele einen Song ab, damit dein Browser als Gerät erscheint.
+        </div>
+      )}
       <select onChange={e => onDeviceSelected(e.target.value)} style={{ marginLeft: 16 }}>
         <option value="">Gerät wählen</option>
         {devices.map(device => (

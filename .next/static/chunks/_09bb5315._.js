@@ -10,18 +10,21 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 ;
-function Ueberschrift() {
+function Ueberschrift({ color = "#fff" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+            style: {
+                color
+            },
             children: "Song Quiz"
         }, void 0, false, {
             fileName: "[project]/src/components/Ueberschrift.tsx",
-            lineNumber: 6,
+            lineNumber: 10,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Ueberschrift.tsx",
-        lineNumber: 5,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
@@ -42,7 +45,7 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 ;
-function PunkteAnzeige({ punkte }) {
+function PunkteAnzeige({ punkte, color = "#fff" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
             display: "flex",
@@ -51,31 +54,17 @@ function PunkteAnzeige({ punkte }) {
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    color
+                },
                 children: [
                     "Team 1: ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                         children: punkte[0]
                     }, void 0, false, {
                         fileName: "[project]/src/components/PunkteAnzeige.tsx",
-                        lineNumber: 10,
-                        columnNumber: 20
-                    }, this),
-                    " Punkte"
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/PunkteAnzeige.tsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                children: [
-                    "Team 2: ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-                        children: punkte[1]
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/PunkteAnzeige.tsx",
                         lineNumber: 11,
-                        columnNumber: 20
+                        columnNumber: 38
                     }, this),
                     " Punkte"
                 ]
@@ -83,11 +72,31 @@ function PunkteAnzeige({ punkte }) {
                 fileName: "[project]/src/components/PunkteAnzeige.tsx",
                 lineNumber: 11,
                 columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    color
+                },
+                children: [
+                    "Team 2: ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                        children: punkte[1]
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/PunkteAnzeige.tsx",
+                        lineNumber: 12,
+                        columnNumber: 38
+                    }, this),
+                    " Punkte"
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/PunkteAnzeige.tsx",
+                lineNumber: 12,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/PunkteAnzeige.tsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 5
     }, this);
 }
@@ -123,13 +132,14 @@ const SCOPES = [
 function SpotifyLogin({ onToken }) {
     _s();
     const REDIRECT_URI = ("TURBOPACK compile-time truthy", 1) ? window.location.origin : ("TURBOPACK unreachable", undefined);
+    console.log(REDIRECT_URI);
     const handleLogin = ()=>{
         const authUrl = "https://accounts.spotify.com/authorize?" + new URLSearchParams({
             client_id: CLIENT_ID,
             response_type: "token",
             redirect_uri: REDIRECT_URI,
             scope: SCOPES.join(" "),
-            show_dialog: true
+            show_dialog: "true"
         }).toString();
         window.location.href = authUrl;
     };
@@ -168,12 +178,12 @@ function SpotifyLogin({ onToken }) {
             children: "Mit Spotify verbinden"
         }, void 0, false, {
             fileName: "[project]/src/components/SpotifyLogin.tsx",
-            lineNumber: 45,
+            lineNumber: 46,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/SpotifyLogin.tsx",
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }
@@ -258,6 +268,30 @@ function DeviceSelector({ accessToken, onDeviceSelected }) {
                 lineNumber: 34,
                 columnNumber: 17
             }, this),
+            devices.length > 0 && !devices.some((d)=>d.type === "Computer" && d.name.toLowerCase().includes("web player")) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    color: "orange",
+                    margin: "8px 0"
+                },
+                children: [
+                    "Tipp: Öffne ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        href: "https://open.spotify.com",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "Spotify Webplayer"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/DeviceSelector.tsx",
+                        lineNumber: 37,
+                        columnNumber: 23
+                    }, this),
+                    " und spiele einen Song ab, damit dein Browser als Gerät erscheint."
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/DeviceSelector.tsx",
+                lineNumber: 36,
+                columnNumber: 9
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                 onChange: (e)=>onDeviceSelected(e.target.value),
                 style: {
@@ -269,7 +303,7 @@ function DeviceSelector({ accessToken, onDeviceSelected }) {
                         children: "Gerät wählen"
                     }, void 0, false, {
                         fileName: "[project]/src/components/DeviceSelector.tsx",
-                        lineNumber: 36,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, this),
                     devices.map((device)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -281,13 +315,13 @@ function DeviceSelector({ accessToken, onDeviceSelected }) {
                             ]
                         }, device.id, true, {
                             fileName: "[project]/src/components/DeviceSelector.tsx",
-                            lineNumber: 38,
+                            lineNumber: 43,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DeviceSelector.tsx",
-                lineNumber: 35,
+                lineNumber: 40,
                 columnNumber: 7
             }, this)
         ]
@@ -637,6 +671,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function SongHistory({ songs }) {
     if (!songs.length) return null;
+    // Songs nach Erscheinungsjahr sortieren (aufsteigend)
+    const sortedSongs = [
+        ...songs
+    ].sort((a, b)=>parseInt(a.releaseYear) - parseInt(b.releaseYear));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
             margin: "2rem 0"
@@ -646,7 +684,7 @@ function SongHistory({ songs }) {
                 children: "Bisher gespielte Songs"
             }, void 0, false, {
                 fileName: "[project]/src/components/SongHistory.tsx",
-                lineNumber: 21,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -655,14 +693,15 @@ function SongHistory({ songs }) {
                     flexWrap: "wrap",
                     gap: "1rem"
                 },
-                children: songs.map((song, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: sortedSongs.map((song, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-light",
                         style: {
                             border: "1px solid #ccc",
                             borderRadius: 8,
                             padding: 12,
                             minWidth: 120,
                             textAlign: "center",
-                            background: "#f9f9f9"
+                            background: "var(--card-bg)"
                         },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -675,7 +714,7 @@ function SongHistory({ songs }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SongHistory.tsx",
-                                lineNumber: 25,
+                                lineNumber: 27,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -685,14 +724,14 @@ function SongHistory({ songs }) {
                                 children: song.name
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SongHistory.tsx",
-                                lineNumber: 26,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: typeof song.artists === "string" ? song.artists : song.artists.map((a)=>a.name).join(", ")
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SongHistory.tsx",
-                                lineNumber: 27,
+                                lineNumber: 29,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -703,24 +742,24 @@ function SongHistory({ songs }) {
                                 children: song.releaseYear
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SongHistory.tsx",
-                                lineNumber: 28,
+                                lineNumber: 30,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, song.id || idx, true, {
                         fileName: "[project]/src/components/SongHistory.tsx",
-                        lineNumber: 24,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/SongHistory.tsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/SongHistory.tsx",
-        lineNumber: 20,
+        lineNumber: 22,
         columnNumber: 5
     }, this);
 }
@@ -1361,6 +1400,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function Home() {
     _s();
     const [accessToken, setAccessToken] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -1464,6 +1504,56 @@ function Home() {
         setSortAnswers(null);
         setSortFeedback("");
     };
+    // Shortcut für Musik stoppen/abspielen (Option + Leertaste)
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useEffect({
+        "Home.useEffect": ()=>{
+            const handleKeyDown = {
+                "Home.useEffect.handleKeyDown": (e)=>{
+                    if (e.code === "Space" && e.altKey) {
+                        if (accessToken && deviceId) {
+                            // Status abfragen
+                            fetch("https://api.spotify.com/v1/me/player", {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then({
+                                "Home.useEffect.handleKeyDown": (res)=>res.json()
+                            }["Home.useEffect.handleKeyDown"]).then({
+                                "Home.useEffect.handleKeyDown": (data)=>{
+                                    if (data.is_playing) {
+                                        // Pausieren
+                                        fetch(`https://api.spotify.com/v1/me/player/pause?device_id=${deviceId}`, {
+                                            method: "PUT",
+                                            headers: {
+                                                Authorization: `Bearer ${accessToken}`,
+                                                "Content-Type": "application/json"
+                                            }
+                                        });
+                                    } else {
+                                        // Fortsetzen
+                                        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
+                                            method: "PUT",
+                                            headers: {
+                                                Authorization: `Bearer ${accessToken}`,
+                                                "Content-Type": "application/json"
+                                            }
+                                        });
+                                    }
+                                }
+                            }["Home.useEffect.handleKeyDown"]);
+                        }
+                    }
+                }
+            }["Home.useEffect.handleKeyDown"];
+            window.addEventListener("keydown", handleKeyDown);
+            return ({
+                "Home.useEffect": ()=>window.removeEventListener("keydown", handleKeyDown)
+            })["Home.useEffect"];
+        }
+    }["Home.useEffect"], [
+        accessToken,
+        deviceId
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "App",
         style: {
@@ -1474,28 +1564,28 @@ function Home() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Ueberschrift$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 145,
+                lineNumber: 190,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PunkteAnzeige$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 punkte: punkte
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 146,
+                lineNumber: 191,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SongHistory$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 songs: songHistory
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 147,
+                lineNumber: 192,
                 columnNumber: 7
             }, this),
             !accessToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SpotifyLogin$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 onToken: setAccessToken
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 148,
+                lineNumber: 193,
                 columnNumber: 24
             }, this),
             accessToken && !deviceId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DeviceSelector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1503,7 +1593,7 @@ function Home() {
                 onDeviceSelected: setDeviceId
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 150,
+                lineNumber: 195,
                 columnNumber: 9
             }, this),
             accessToken && deviceId && !trackPool.length && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PlaylistSelector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1511,7 +1601,7 @@ function Home() {
                 onTracksLoaded: handleTracksLoaded
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 156,
+                lineNumber: 201,
                 columnNumber: 9
             }, this),
             accessToken && deviceId && trackPool.length > 0 && !songMeta && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1523,19 +1613,19 @@ function Home() {
                     children: "Zufälligen Song aus Playlist abspielen"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 163,
+                    lineNumber: 208,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 162,
+                lineNumber: 207,
                 columnNumber: 9
             }, this),
             songMeta && !showResult && !showSortPanel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TeamGuessPanel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 onSubmit: handleGuesses
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 169,
+                lineNumber: 214,
                 columnNumber: 9
             }, this),
             songMeta && showSortPanel && songHistory.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$YearSortPanel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1544,7 +1634,7 @@ function Home() {
                 onSubmit: handleSortSubmit
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 172,
+                lineNumber: 217,
                 columnNumber: 9
             }, this),
             songMeta && showResult && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1558,7 +1648,7 @@ function Home() {
                         children: sortFeedback
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 181,
+                        lineNumber: 226,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$RoundResult$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1569,7 +1659,7 @@ function Home() {
                         setPunkte: setPunkte
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 187,
+                        lineNumber: 232,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1577,11 +1667,11 @@ function Home() {
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 141,
+        lineNumber: 186,
         columnNumber: 5
     }, this);
 }
-_s(Home, "a/glU03BtW+CxWUKd1bIfP1+Tto=");
+_s(Home, "CCyh8I1dibaCzoBEjGgAmAAzUrY=");
 _c = Home;
 const __TURBOPACK__default__export__ = Home;
 var _c;

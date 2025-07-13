@@ -1,42 +1,98 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Schriftart einbinden (Google Fonts oder lokal, hier als Beispiel mit Fallback) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --primary-bg: #102d18;
+  --primary-dark: #0b1e12;
+  --accent: #1DB954;
+  --card-bg: #183c25;
+  --text: #f3f3f3;
+  --text-muted: #b6c2b7;
+  --border: #254d34;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background: var(--primary-bg);
+  color: #111;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  background: var(--primary-dark);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #0002;
+  padding: 32px;
+  color: #111;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6, p, div, span, label, input, select, button {
+  color: #111;
 }
 
-.card {
-  padding: 2em;
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 1rem 2rem;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #159c43;
 }
 
-.read-the-docs {
-  color: #888;
+h2, h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0;
 }
+
+/* Song-Karten */
+[class*="SongHistory"] div[style*="border: 1px"] {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text);
+  box-shadow: 0 2px 8px #0003;
+}
+
+[class*="SongHistory"] img {
+  box-shadow: 0 2px 8px #0005;
+}
+
+/* Inputs */
+input, select {
+  background: var(--primary-dark);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* Panels */
+[class*="Panel"], [class*="Result"] {
+  background: var(--card-bg) !important;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0002;
+  padding: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* Tipp-Hinweis */
+[class*="DeviceSelector"] div[style*="color: orange"] {
+  background: #1db95422;
+  border-radius: 8px;
+  padding: 8px 12px;
+} 

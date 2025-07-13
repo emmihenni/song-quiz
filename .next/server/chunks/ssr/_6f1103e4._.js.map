@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/emilyhenningsen/Documents/song-quiz/src/app/layout.tsx"],"sourcesContent":["import './App.css';\nimport type { ReactNode } from 'react';\n\nexport default function RootLayout({ children }: { children: ReactNode }) {\n  return (\n    <html lang=\"de\">\n      <body>\n        {children}\n      </body>\n    </html>\n  );\n} "],"names":[],"mappings":";;;;;;AAGe,SAAS,WAAW,EAAE,QAAQ,EAA2B;IACtE,qBACE,8OAAC;QAAK,MAAK;kBACT,cAAA,8OAAC;sBACE;;;;;;;;;;;AAIT","debugId":null}},
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///Users/emilyhenningsen/Documents/song-quiz/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}}]
+}
